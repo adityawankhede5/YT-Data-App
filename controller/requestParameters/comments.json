@@ -1,0 +1,52 @@
+{
+    "required": {
+        "allowedValues":{
+            "part": {
+                "allowedValues": {
+                    "id": "boolean",
+                    "snippet": "boolean"
+                },
+                "info": "The part parameter specifies a comma-separated list of one or more comment resource properties that the API response will include."
+            }
+        }
+    },
+    "filters" : {
+		"note": "specify exactly one of the following parameters",
+		"allowedValues": {
+			"parentId": {
+				"type": "string",
+				"info": "The parentId parameter specifies the ID of the comment for which replies should be retrieved."
+			},
+			"id": {
+				"type": "string",
+				"info": "The id parameter specifies a comma-separated list of comment IDs for the resources that are being retrieved. In a comment resource, the id property specifies the comment's ID."
+			}
+		}
+	},
+	"optionalParameters": {
+		"allowedValues": {
+			"maxResults": {
+				"type": "unsigned integer",
+				"info": "The maxResults parameter specifies the maximum number of items that should be returned in the result set. Acceptable values are 0 to 50, inclusive. The default value is 5."
+			},
+			"pageToken": {
+				"type": "string",
+				"info": "The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+			},
+            "textFormat": {
+                "type": "string",
+                "info": "This parameter indicates whether the API should return comments formatted as HTML or as plain text. The default value is html.",
+                "allowedValues": {
+                    "html": {
+                        "type": "boolean",
+                        "info": "Returns the comments in HTML format. This is the default value."
+                    },
+                    "plainText": {
+                        "type": "boolean",
+                        "info": "Returns the comments in plain text format."
+                    }
+                }
+            }
+		}
+	}
+}

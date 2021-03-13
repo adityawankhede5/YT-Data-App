@@ -1,0 +1,10 @@
+{
+  "kind": "youtube#videoCategory",
+  "etag": etag,
+  "id": string,
+  "snippet": {
+    "channelId": "UCBR8-60-B28hp2BmDPdntcQ",
+    "title": string,
+    "assignable": boolean
+  }
+}

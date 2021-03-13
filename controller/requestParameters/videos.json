@@ -1,0 +1,120 @@
+{
+	"required": {
+        "allowedValues":{
+            "part" : {
+                "type": "string",
+                "info": "The part parameter specifies a comma-separated list of one or more channel resource properties that the API response will include.If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part=snippet, the API response will contain all of those properties.",
+                "allowedValues": {
+                    "contentDetails": {
+                        "type": "boolean"
+                    },
+                    "fileDetails": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "boolean"
+                    },
+                    "liveStreamingDetails": {
+                        "type": "boolean"
+                    },
+                    "localizations": {
+                        "type": "boolean"
+                    },
+                    "player": {
+                        "type": "boolean"
+                    },
+                    "processingDetails": {
+                        "type": "boolean"
+                    },
+                    "recordingDetails": {
+                        "type": "boolean"
+                    },
+                    "snippet": {
+                        "type": "boolean"
+                    },
+                    "statistics": {
+                        "type": "boolean"
+                    },
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "suggestions": {
+                        "type": "boolean"
+                    },
+                    "topicDetails": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+	},
+	"filters" : {
+		"note": "specify exactly one of the following parameters",
+		"allowedValues": {
+			"chart": {
+				"type": "string",
+				"info": "The chart parameter identifies the chart that you want to retrieve.",
+                "allowedValues": {
+                    "mostPopular": {
+                        "type": "boolean",
+                        "info": "Return the most popular videos for the specified content region and video category."
+                    }
+                }
+			},
+			"id": {
+				"type": "string",
+				"info": "The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved. In a video resource, the id property specifies the video's ID."
+			},
+			"myRating": {
+				"type": "string",
+				"info": "TThis parameter can only be used in a properly authorized request. Set this parameter's value to like or dislike to instruct the API to only return videos liked or disliked by the authenticated user.",
+                "allowedValues": {
+                    "dislike": {
+                        "type": "boolean",
+                        "info": "Returns only videos disliked by the authenticated user."
+                    },
+                    "like": {
+                        "type": "boolean",
+                        "info": "Returns only videos liked by the authenticated user."
+                    }
+                }
+			}
+		}
+	},
+	"optionalParameters": {
+		"allowedValues": {
+			"h1": {
+				"type": "string",
+				"info": "The hl parameter instructs the API to retrieve localized resource metadata for a specific application language that the YouTube website supports. The parameter value must be a language code included in the list returned by the i18nLanguages.list method."
+			},
+			"maxHeight": {
+				"type": "unsigned integer",
+				"info": "The maxHeight parameter specifies the maximum height of the embedded player returned in the player.embedHtml property. You can use this parameter to specify that instead of the default dimensions, the embed code should use a height appropriate for your application layout. If the maxWidth parameter is also provided, the player may be shorter than the maxHeight in order to not violate the maximum width. Acceptable values are 72 to 8192, inclusive."
+			},
+			"maxResults": {
+				"type": "unsigned integer",
+				"info": "The maxResults parameter specifies the maximum number of items that should be returned in the result set. Acceptable values are 0 to 50, inclusive. The default value is 5."
+			},
+			"maxWidth": {
+				"type": "unsigned integer",
+				"info": "The maxWidth parameter specifies the maximum width of the embedded player returned in the player.embedHtml property. You can use this parameter to specify that instead of the default dimensions, the embed code should use a width appropriate for your application layout.If the maxHeight parameter is also provided, the player may be narrower than maxWidth in order to not violate the maximum height. Acceptable values are 72 to 8192, inclusive."
+			},
+			"onBehalfOfContentOwner": {
+				"type": "string",
+				"info": "This parameter can only be used in a properly authorized request. Note: This parameter is intended exclusively for YouTube content partners.The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value."
+			},
+			"pageToken": {
+                "type": "string",
+				"info": "The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved."
+			},
+            "regionCode": {
+                "type": "string",
+                "info": "The regionCode parameter instructs the API to select a video chart available in the specified region. This parameter can only be used in conjunction with the chart parameter. The parameter value is an ISO 3166-1 alpha-2 country code."
+            },
+			"videoCategoryId": {
+				"type": "string",
+				"info": "The videoCategoryId parameter identifies the video category for which the chart should be retrieved. This parameter can only be used in conjunction with the chart parameter. By default, charts are not restricted to a particular category. The default value is 0."
+			}
+		}
+	}
+}
